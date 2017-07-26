@@ -1,7 +1,7 @@
 // ==UserScript==
 // @icon         https://www.douyu.com/favicon.ico
 // @name         屏蔽斗鱼礼物特效
-// @version      0.7.1
+// @version      0.8
 // @description  自动屏蔽斗鱼礼物特效
 // @author       LisonFan
 // @match        *://*.douyu.com/*
@@ -14,7 +14,7 @@
     document.onreadystatechange = subSomething;
     function subSomething() {
         if (document.readyState == 'complete'){
-            document.getElementById("shieSwitch").click();
+            document.getElementById("shie-switch").click();
         }
     }
 })();
