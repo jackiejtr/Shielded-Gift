@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         屏蔽直播礼物特效
-// @version      1.1
+// @version      1.1.1
 // @description  自动屏蔽部分直播平台礼物特效，具体看 README
 // @author       LisonFan
 // @match        *://*.douyu.com/*
@@ -8,7 +8,7 @@
 // @match        *://*.zhanqi.tv/*
 // @match        *://cc.163.com/*
 // @grant        none
-// @namespace	 https://lisonfan.com
+// @namespace	 https://github.com/LisonFan/Shielded-Gift
 // ==/UserScript==
 
 (function(){
