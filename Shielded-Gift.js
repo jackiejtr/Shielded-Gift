@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         屏蔽直播礼物特效
-// @version      1.1.3
+// @version      1.1.4
 // @description  自动屏蔽部分直播平台礼物特效，具体看 README
 // @author       LisonFan
 // @match        *://*.douyu.com/*
@@ -54,7 +54,9 @@
     }
 
     function zhanqi() {
-        document.getElementById("js-gift-shield").click(); // 屏蔽小礼物的显示
+        if (getCookie("beGiftShield") === "0") {
+            document.querySelector("#js-gift-shield").click(); // 屏蔽小礼物的显示
+        }
     }
 
     function cc163() {
@@ -78,5 +80,11 @@
     }
     function liveqq() {
         document.getElementById("shieSwitch").click();
+    }
+
+    function getCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]);
+        return null;
     }
 })();
