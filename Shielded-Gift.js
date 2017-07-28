@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         屏蔽直播礼物特效
-// @version      1.1.4
+// @version      1.1.5
 // @description  自动屏蔽部分直播平台礼物特效，具体看 README
 // @author       LisonFan
 // @match        *://*.douyu.com/*
@@ -48,9 +48,18 @@
     }
 
     function panda() {
-        document.getElementById("gift-forbid-option-forbid_chat_gift").click(); // 屏蔽聊天框横幅
-        document.getElementById("gift-forbid-option-forbid_flash_gift").click(); // 屏蔽播放器礼物滚动
-        document.getElementById("gift-forbid-option-forbid_chat_notice").click(); // 屏蔽聊天框消息通知
+        var forbid_chat_gift_status = JSON.parse(localStorage.getItem("panda.tv/user/setting")).forbid_chat_gift;
+        var forbid_flash_gift_status = JSON.parse(localStorage.getItem("panda.tv/user/setting")).forbid_flash_gift;
+        var forbid_chat_notice_status = JSON.parse(localStorage.getItem("panda.tv/user/setting")).forbid_chat_notice;
+        if (forbid_chat_gift_status === "0") {
+            document.getElementById("gift-forbid-option-forbid_chat_gift").click(); // 屏蔽聊天框横幅
+        }
+        if (forbid_flash_gift_status === "0") {
+            document.getElementById("gift-forbid-option-forbid_flash_gift").click(); // 屏蔽播放器礼物滚动
+        }
+        if (forbid_chat_notice_status === "0") {
+            document.getElementById("gift-forbid-option-forbid_chat_notice").click(); // 屏蔽聊天框消息通知
+        }
     }
 
     function zhanqi() {
