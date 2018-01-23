@@ -12,6 +12,7 @@
 // @grant        none
 // @namespace	 https://github.com/LisonFan/Shielded-Gift
 // ==/UserScript==
+// test gpg
 
 (function () {
     'use strict';
